@@ -18,6 +18,8 @@
 - **aiohttp**: 비동기 HTTP 요청 처리
 
 ## UBUNTU 셋팅 명령어
+
+```bash
 // 기본 설치
 sudo apt-get update
 sudo apt install -y python3-pip nginx
@@ -45,6 +47,9 @@ nohup python3 -m uvicorn main:app &
 
 //서버 확인
 ps aux | grep uvicorn
+```
+
+
 
 ## 설치 방법
 
