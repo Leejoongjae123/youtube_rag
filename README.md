@@ -17,6 +17,11 @@
 - **Mangum**: AWS Lambda 배포 지원
 - **aiohttp**: 비동기 HTTP 요청 처리
 
+## AWS 가입 방법
+하단 URL 내용 참조
+https://kka3seb.tistory.com/1133
+
+
 ## UBUNTU 셋팅 명령어
 
 ```bash
