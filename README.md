@@ -1,5 +1,34 @@
 # YouTube RAG 기반 카카오톡 챗봇 API
 
+#UBUNTU 셋팅 명령어
+// 기본 설치
+sudo apt-get update
+sudo apt install -y python3-pip nginx
+
+// nginx 셋팅
+sudo vim /etc/nginx/sites-enabled/fastapi_nginx
+
+// nginx 문구 설정
+server{
+	listen 80;
+    server_name {public ip};
+    location / {
+    	proxy_pass http://127.0.0.1:8000;
+    }
+}
+
+//재시작
+sudo service nginx restart
+
+//라이브러리설치
+pip install fastapi==0.104.1 uvicorn==0.24.0 langchain==0.0.350 langchain-community==0.0.10 langchain-openai==0.0.2 beautifulsoup4==4.12.2 requests==2.31.0 python-dotenv==1.0.0 chromadb==0.4.18 aiohttp==3.8.6 mangum==0.17.0
+
+//서버 온
+nohup python3 -m uvicorn main:app &
+
+//서버 확인
+ps aux | grep uvicorn
+
 ## 프로젝트 개요
 이 프로젝트는 FastAPI를 사용하여 RAG(Retrieval-Augmented Generation) 기반의 챗봇 API를 구현한 것입니다. 한국경제 뉴스 기사에서 정보를 추출하여 사용자 질문에 답변하며, 카카오톡 스마트 챗봇과 연동할 수 있습니다.
 
