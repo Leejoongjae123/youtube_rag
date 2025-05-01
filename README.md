@@ -1,6 +1,23 @@
 # YouTube RAG 기반 카카오톡 챗봇 API
 
-#UBUNTU 셋팅 명령어
+## 프로젝트 개요
+이 프로젝트는 FastAPI를 사용하여 RAG(Retrieval-Augmented Generation) 기반의 챗봇 API를 구현한 것입니다. 한국경제 뉴스 기사에서 정보를 추출하여 사용자 질문에 답변하며, 카카오톡 스마트 챗봇과 연동할 수 있습니다.
+
+## 주요 기능
+- 웹 페이지(한국경제 기사)에서 콘텐츠를 로드하여 벡터 데이터베이스 구축
+- OpenAI 임베딩과 ChatGPT를 활용한 질의응답 시스템
+- 카카오톡 챗봇 API 연동(비동기 콜백 지원)
+- 직접 API 호출을 통한 질의응답 기능
+
+## 기술 스택
+- **FastAPI**: 웹 API 프레임워크
+- **LangChain**: LLM 애플리케이션 구축 프레임워크
+- **ChromaDB**: 벡터 데이터베이스
+- **OpenAI API**: 임베딩 및 질의응답 생성
+- **Mangum**: AWS Lambda 배포 지원
+- **aiohttp**: 비동기 HTTP 요청 처리
+
+## UBUNTU 셋팅 명령어
 // 기본 설치
 sudo apt-get update
 sudo apt install -y python3-pip nginx
@@ -28,23 +45,6 @@ nohup python3 -m uvicorn main:app &
 
 //서버 확인
 ps aux | grep uvicorn
-
-## 프로젝트 개요
-이 프로젝트는 FastAPI를 사용하여 RAG(Retrieval-Augmented Generation) 기반의 챗봇 API를 구현한 것입니다. 한국경제 뉴스 기사에서 정보를 추출하여 사용자 질문에 답변하며, 카카오톡 스마트 챗봇과 연동할 수 있습니다.
-
-## 주요 기능
-- 웹 페이지(한국경제 기사)에서 콘텐츠를 로드하여 벡터 데이터베이스 구축
-- OpenAI 임베딩과 ChatGPT를 활용한 질의응답 시스템
-- 카카오톡 챗봇 API 연동(비동기 콜백 지원)
-- 직접 API 호출을 통한 질의응답 기능
-
-## 기술 스택
-- **FastAPI**: 웹 API 프레임워크
-- **LangChain**: LLM 애플리케이션 구축 프레임워크
-- **ChromaDB**: 벡터 데이터베이스
-- **OpenAI API**: 임베딩 및 질의응답 생성
-- **Mangum**: AWS Lambda 배포 지원
-- **aiohttp**: 비동기 HTTP 요청 처리
 
 ## 설치 방법
 
